@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Adder from "./hooks/Adder";
-import DelaysScenario from "./hooks/sharedStateHook/DelaysScenario";
+import DelaysScenario from "./hooks/sharedLoadingStateHook/DelaysScenario";
 
 function App() {
     return (

@@ -21,6 +21,10 @@ function reducer(state: LoadingCounterState, action: LoadingCounterReducerAction
 
 export const LoadingCounterContext = React.createContext<[LoadingCounterState, Dispatch<LoadingCounterReducerAction>]>(null as any /*this is a small hack for convenience*/);
 
+/**
+ * The provided value in the context is actually the result of `useReducer`. Meaning: [currentValue, dispatch].
+ * Thus all consumers can use current value, and dispatch actions as needed.
+ */
 export const LoadingCounterContextProvider = ({children}: { children: React.ReactNode }) => (
     <LoadingCounterContext.Provider value={useReducer(reducer, {loadingCounter: 0})}>
         {children}
