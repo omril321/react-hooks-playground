@@ -6,7 +6,6 @@ const LoadingDisplayer = () => {
 
     const isCurrentlyLoading = loadingCounterValue.loadingCounter > 0;
 
-    console.log("Loading rendered! value is: " , isCurrentlyLoading);
     return (
         <div>Loading? {isCurrentlyLoading ? "YES!" : "nope"} </div>
     )

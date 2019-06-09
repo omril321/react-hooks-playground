@@ -1,10 +1,10 @@
 import React from "react";
 import {useLoadingCounter} from "./LoadingCounterContext";
 
-const Delayer = ({msToDelayWhenClicked}) => {
+const Delayer = ({msToDelayWhenClicked}: {msToDelayWhenClicked: number}) => {
         const [loadingCounterValue, loadingCounterDispatch] = useLoadingCounter();
 
-        const isCurrentlyLoading = loadingCounterValue > 0;
+        const isCurrentlyLoading = loadingCounterValue.loadingCounter > 0;
 
         const handleClick = () => {
             loadingCounterDispatch({type: 'increment'});
