@@ -1,0 +1,31 @@
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.tab_name {
+  font-size: 20px;
+  color: #268efb;
+  background: 0;
+  border: 0;
+  cursor: pointer;
+  border-bottom: transparent 2px solid;
+  transition: all 100ms;
+  box-sizing: border-box;
+  outline: 0;
+
+
+  &:hover {
+    color: #81a6e6;
+  }
+
+  &:not(:first-child) {
+    margin-left: 30px;
+  }
+
+  &.tab_name__selected {
+    border-bottom: #69c8fb 2px solid;
+  }
+}
