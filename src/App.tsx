@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Adder from "./hooks/Adder";
-import DelaysScenario from "./hooks/sharedLoadingStateHook/DelaysScenario";
+import Adder from "./scenarios/adder/Adder";
+import DelaysScenario from "./scenarios/sharedLoadingStateHook/DelaysScenario";
 import Tabs, {ITabsProps} from "./tabs/Tabs";
 
 function App() {
