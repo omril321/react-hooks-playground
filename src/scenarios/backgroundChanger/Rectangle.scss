@@ -1,0 +1,7 @@
+$rectangleSize: 40px;
+
+.rectangle {
+  width: $rectangleSize;
+  height: $rectangleSize;
+  border: 3px red solid;
+}
