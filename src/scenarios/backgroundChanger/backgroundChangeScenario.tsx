@@ -1,23 +1,25 @@
 import * as React from "react";
 import Rectangle from "./Rectangle";
-import {ReactElement, useCallback, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 
 
 const BackgroundChangeScenario = () => {
-    const [rects, setRects] = useState<ReactElement[]>([]);
+    const [rectsNum, setRectsNum] = useState<number>(1);
 
-    const addRectangle = useCallback(() => {
-        setRects(rects => [...rects, <Rectangle key={rects.length} onClick={addRectangle}/>]);
-    }, []);
+    const addRectangle = () => setRectsNum(rectsNum => rectsNum + 1);
+
+    const removeRectangle = () => setRectsNum(rectsNum => rectsNum - 1);
 
     useEffect(() => {
-        const addedInterval = setInterval(addRectangle, 3000);
+        const addedInterval = setInterval(addRectangle, 1500);
         return () => clearInterval(addedInterval);
-    }, [addRectangle]);
+    }, []);
 
     return (
         <div style={{display: "flex"}}>
-            {rects}
+            {[...new Array(rectsNum)].map((ignored, index) =>
+                <Rectangle key={index} onClick={removeRectangle}/>)
+            }
         </div>
     )
 };
